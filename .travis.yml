@@ -12,6 +12,8 @@ addons:
       - gcc-7
       - g++-7
 
+arch: arm64
+
 git:
   submodules: false
 
@@ -23,8 +25,8 @@ before_script:
   - bash travis_wait.sh 60 git submodule update --init
 
 env:
-  - PLATFORM=solo5 MACHINE=x86_64 TESTS=spt EXTRAFLAGS=
-  - PLATFORM=hw MACHINE=x86_64 TESTS=none KERNONLY=-k EXTRAFLAGS= 
+  - PLATFORM=solo5 MACHINE=aarch64 TESTS=spt EXTRAFLAGS=
+  - PLATFORM=hw MACHINE=aarch64 TESTS=none KERNONLY=-k EXTRAFLAGS= 
 
 script:
   - export CC=gcc-7
